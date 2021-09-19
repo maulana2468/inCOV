@@ -2,7 +2,8 @@
  An application for check daily cases and total case in Indonesia/world, as well as check availability hospital bed in Indonesia
  
 - RS Bed Covid API from https://github.com/satyawikananda/rs-bed-covid-indo-api/
-- World data from api.kawalcorona.com
+- World data from https://api.kawalcorona.com/indonesia/
+- Province data from https://data.covid19.go.id/
  
 <img src="https://github.com/maulana2468/inCOV/blob/main/assets/screenshot/7.png" width="225">
 <img src="https://github.com/maulana2468/inCOV/blob/main/assets/screenshot/1.png" width="225">
