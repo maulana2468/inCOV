@@ -69,7 +69,7 @@ class MainMenu extends StatelessWidget {
                                 Text(
                                   "Total Kasus di Indonesia",
                                   style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 16,
                                     fontFamily: "Poppins",
                                   ),
                                 ),
@@ -333,7 +333,7 @@ Expanded lineColumn(String stat, String total, Color color) {
         Text(
           stat,
           style: TextStyle(
-            fontSize: 17,
+            fontSize: 15,
             fontFamily: "Poppins",
             fontWeight: FontWeight.w500,
           ),
@@ -341,7 +341,7 @@ Expanded lineColumn(String stat, String total, Color color) {
         Text(
           total,
           style: TextStyle(
-            fontSize: 19,
+            fontSize: 17,
             fontFamily: "Poppins",
             color: color,
             fontWeight: FontWeight.w600,
@@ -360,7 +360,7 @@ Padding headingTitle(String title) {
       child: Text(
         title,
         style: TextStyle(
-          fontSize: 18,
+          fontSize: 16,
           fontFamily: "Poppins",
           fontWeight: FontWeight.w600,
         ),
@@ -402,7 +402,7 @@ Container rowVaksinasi(String info, String total,
           total,
           style: TextStyle(
             fontFamily: "Poppins",
-            fontSize: 20,
+            fontSize: 17,
             color: color,
             fontWeight: FontWeight.w500,
           ),
@@ -459,7 +459,7 @@ Container locCard(BuildContext context, Widget func, String nameLoc,
                         fontFamily: "poppins",
                         color: (index == 0) ? Colors.black : Colors.white,
                         fontWeight: FontWeight.w600,
-                        fontSize: 20,
+                        fontSize: 17,
                       ),
                     ),
                     Text(

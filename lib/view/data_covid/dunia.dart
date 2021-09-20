@@ -25,7 +25,7 @@ class _WorldPageState extends State<WorldPage> {
         height: MediaQuery.of(context).size.height,
         color: Color(0xFFDFF1F3),
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.only(left: 20, right: 20),
           child: FutureBuilder(
             future: TotalDunia.connectToAPI(),
             builder: (context, snapshot) {
@@ -35,6 +35,7 @@ class _WorldPageState extends State<WorldPage> {
                   itemCount: dataCovid.length,
                   itemBuilder: (context, index) {
                     return listWorld(
+                        index,
                         dataCovid[index].country,
                         dataCovid[index].active,
                         dataCovid[index].confirmed,
@@ -53,12 +54,12 @@ class _WorldPageState extends State<WorldPage> {
   }
 }
 
-Container listWorld(
-    String country, int active, int confirmed, int death, int recovered) {
+Container listWorld(int index, String country, int active, int confirmed,
+    int death, int recovered) {
   return Container(
     height: 180,
     padding: EdgeInsets.all(13),
-    margin: EdgeInsets.only(bottom: 15),
+    margin: EdgeInsets.only(top: (index == 0) ? 15 : 0, bottom: 15),
     decoration: BoxDecoration(
       color: Color(0xffA5E4BA),
       borderRadius: BorderRadius.circular(10),
@@ -72,7 +73,7 @@ Container listWorld(
             country,
             style: TextStyle(
               fontFamily: "Poppins",
-              fontSize: 18,
+              fontSize: 17,
               fontWeight: FontWeight.bold,
             ),
           ),

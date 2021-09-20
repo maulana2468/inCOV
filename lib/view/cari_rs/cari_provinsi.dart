@@ -28,7 +28,7 @@ class _FindByProvState extends State<FindByProv> {
       body: Container(
         color: Color(0xFFDFF1F3),
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: FutureBuilder(
             future: ProvinsiRS.connectToAPI(),
             builder: (context, snapshot) {
@@ -41,6 +41,7 @@ class _FindByProvState extends State<FindByProv> {
                       children: [
                         listProvRs(
                           context,
+                          index,
                           dataProv[index].id,
                           dataProv[index].name,
                         ),
@@ -59,11 +60,12 @@ class _FindByProvState extends State<FindByProv> {
   }
 }
 
-Column listProvRs(BuildContext context, String idProv, String nameProv) {
+Column listProvRs(
+    BuildContext context, int index, String idProv, String nameProv) {
   return Column(
     children: [
       Container(
-        margin: EdgeInsets.only(bottom: 15),
+        margin: EdgeInsets.only(top: (index == 0) ? 15 : 0, bottom: 15),
         padding: EdgeInsets.all(10),
         width: MediaQuery.of(context).size.width,
         //height: 100,
@@ -79,7 +81,7 @@ Column listProvRs(BuildContext context, String idProv, String nameProv) {
                 nameProv,
                 style: TextStyle(
                   fontFamily: "Poppins",
-                  fontSize: 20,
+                  fontSize: 17,
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
                 ),
@@ -128,11 +130,11 @@ Column listProvRs(BuildContext context, String idProv, String nameProv) {
       BlocBuilder<SetAnim2Bloc, SetAnimState>(
         builder: (context, state) {
           return Align(
-            alignment: Alignment.centerLeft,
+            alignment: Alignment.center,
             child: AnimatedContainer(
               duration: Duration(milliseconds: 100),
-              margin: EdgeInsets.only(bottom: 15, left: 5),
-              width: MediaQuery.of(context).size.width * 0.60,
+              margin: EdgeInsets.only(bottom: 15),
+              width: MediaQuery.of(context).size.width * 0.87,
               decoration: BoxDecoration(
                 color: Color(0xffEAF3DD),
                 borderRadius: BorderRadius.circular(10),
@@ -153,6 +155,7 @@ Column listProvRs(BuildContext context, String idProv, String nameProv) {
                                   snapshot.data as List<KotaKabRS>;
                               return ListView.builder(
                                 //scrollDirection: Axis.vertical,
+                                physics: NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
                                 itemCount: dataKotaKab.length,
                                 itemBuilder: (context, index) {
@@ -169,11 +172,8 @@ Column listProvRs(BuildContext context, String idProv, String nameProv) {
                                 },
                               );
                             } else {
-                              return Align(
-                                alignment: Alignment.center,
-                                child: LinearProgressIndicator(
-                                  minHeight: 10,
-                                ),
+                              return LinearProgressIndicator(
+                                minHeight: 5,
                               );
                             }
                           },

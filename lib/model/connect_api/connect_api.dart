@@ -145,8 +145,8 @@ class TotalDunia {
       country: object['Country_Region'],
       confirmed: object['Confirmed'],
       death: object['Deaths'],
-      recovered: object['Recovered'],
-      active: object['Active'],
+      recovered: (object['Recovered'] != null) ? object['Recovered'] : 0,
+      active: (object['Active'] != null) ? object['Active'] : 0,
     );
   }
 

@@ -27,7 +27,7 @@ class _ProvPageState extends State<ProvPage> {
       body: Container(
         color: Color(0xFFDFF1F3),
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: FutureBuilder(
             future: TotalProv.connectToAPI(),
             builder: (context, snapshot) {
@@ -60,7 +60,7 @@ class _ProvPageState extends State<ProvPage> {
   }
 }
 
-Stack listCity(BuildContext context, String city, int pos, int sem, int men,
+Stack listCity(BuildContext context, String prov, int pos, int sem, int men,
     int rawat, List jenisKelamin, List kelompokUmur, int indexList) {
   var formatter = NumberFormat('###,###,###,000');
 
@@ -80,7 +80,7 @@ Stack listCity(BuildContext context, String city, int pos, int sem, int men,
           return AnimatedContainer(
             padding: EdgeInsets.only(bottom: 5),
             duration: Duration(milliseconds: 125),
-            margin: EdgeInsets.only(bottom: 15),
+            margin: EdgeInsets.only(top: (indexList == 0) ? 15 : 0, bottom: 15),
             width: MediaQuery.of(context).size.width,
             height: (state is SetAnimValue)
                 ? ((state.index == indexList) ? 320 : 175)
@@ -121,7 +121,7 @@ Stack listCity(BuildContext context, String city, int pos, int sem, int men,
                                     style: TextStyle(
                                       fontFamily: "Poppins",
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 18,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ],
@@ -142,7 +142,7 @@ Stack listCity(BuildContext context, String city, int pos, int sem, int men,
                                     style: TextStyle(
                                       fontFamily: "Poppins",
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 18,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ],
@@ -231,7 +231,7 @@ Stack listCity(BuildContext context, String city, int pos, int sem, int men,
         },
       ),
       Container(
-        margin: EdgeInsets.only(bottom: 15),
+        margin: EdgeInsets.only(top: (indexList == 0) ? 15 : 0, bottom: 15),
         padding: EdgeInsets.all(10),
         width: MediaQuery.of(context).size.width,
         height: 175,
@@ -244,12 +244,12 @@ Stack listCity(BuildContext context, String city, int pos, int sem, int men,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              city,
+              prov,
               style: TextStyle(
                 fontFamily: "Poppins",
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
-                fontSize: 17,
+                fontSize: 16,
               ),
             ),
             Container(

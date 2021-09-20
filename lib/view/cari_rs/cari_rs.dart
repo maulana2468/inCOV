@@ -51,7 +51,7 @@ class _FindByKecamatanState extends State<FindByKecamatan> {
       body: Container(
         color: Color(0xFFDFF1F3),
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
           child: Column(
             children: [
               Row(
@@ -65,7 +65,7 @@ class _FindByKecamatanState extends State<FindByKecamatan> {
                     alignment: Alignment.center,
                     child: Text(
                       "Data mungkin terjadi kesalahan\ndikarenakan data pusat sering\nterjadi perubahan!",
-                      style: TextStyle(fontSize: 17),
+                      style: TextStyle(fontSize: 16),
                     ),
                   ),
                 ],
@@ -148,7 +148,7 @@ Container listRs(BuildContext context, int index, String id, String name,
           name,
           style: TextStyle(
             fontFamily: "Poppins",
-            fontSize: 17,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -205,11 +205,11 @@ Container listRs(BuildContext context, int index, String id, String name,
         Divider(thickness: 3),
         Text(
           "Antrian: " + queue.toString(),
-          style: TextStyle(fontFamily: "Poppins", fontSize: 16),
+          style: TextStyle(fontFamily: "Poppins", fontSize: 15),
         ),
         Text(
           "Tempat tidur tersedia: " + bedAvail.toString(),
-          style: TextStyle(fontFamily: "Poppins", fontSize: 16),
+          style: TextStyle(fontFamily: "Poppins", fontSize: 15),
         ),
         Text(
           info,
