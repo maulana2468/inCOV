@@ -4,7 +4,7 @@
 - RS Bed Covid API from https://github.com/satyawikananda/rs-bed-covid-indo-api/
 - World data from https://api.kawalcorona.com/indonesia/
 - Province data from https://data.covid19.go.id/
-### Download
+## Download
 Unduh aplikasinya [disini](https://github.com/maulana2468/inCOV/releases/download/apk/inCOV.apk)
  
 <img src="https://github.com/maulana2468/inCOV/blob/main/assets/screenshot/7.png" width="225">
